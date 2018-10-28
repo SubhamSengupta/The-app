@@ -5,6 +5,7 @@
   "rules": {
     "semi": ["error", "never"],
     "quotes": ["error", "single"],
-    "no-var": "warn"
+    "no-var": "warn",
+    "comma-dangle": ["warn", "always-multiline"]
   }
 }

@@ -7,18 +7,22 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
     filename: '[contenthash].js',
   },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
   module: {
     rules: [
       {
-        test: '/.js$/',
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
         use: 'babel-loader',
       },
       {
-        test: '/.html$/',
+        test: /\.html$/,
         use: 'html-loader',
       },
       {
-        test: '/.css$/',
+        test: /\.css$/,
         use: 'css-loader',
       },
     ],

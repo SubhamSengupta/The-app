@@ -7,19 +7,31 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
     filename: '[contenthash].js',
   },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
   module: {
     rules: [
       {
-        test: '/.js$/',
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
         use: 'babel-loader',
       },
       {
-        test: '/.html$/',
+        test: /\.html$/,
         use: 'html-loader',
       },
       {
-        test: '/.css$/',
-        use: 'css-loader',
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.(png|jp(e*)g|gif|svg)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
       },
     ],
   },

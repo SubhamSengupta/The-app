@@ -3,19 +3,15 @@ import PropTypes from 'prop-types'
 
 import './style.css'
 
-const BigBanner = ({ src, alt }) => (
-  <div className='big-banner'>
-    <img src={src} alt={alt} />
-  </div>
+const BigBanner = ({ src }) => (
+  <div
+    className='big-banner'
+    style={{ backgroundImage: `url(${src})` }}
+  />
 )
-
-BigBanner.defaultProps = {
-  alt: 'banner_img',
-}
 
 BigBanner.propTypes = {
   src: PropTypes.string.isRequired,
-  alt: PropTypes.string,
 }
 
 export default BigBanner

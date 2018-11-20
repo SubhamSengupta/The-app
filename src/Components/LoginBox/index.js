@@ -10,28 +10,37 @@ class LoginBox extends React.Component {
   constructor() {
     super()
     this.state = {}
+    this.handleChange = this.handleChange.bind(this)
+  }
+
+  handleChange(event) {
+    const { name, value } = event.target
+    this.setState((prevState) => {
+      const newState = { ...prevState }
+      newState[name] = value
+      return newState
+    })
   }
 
   render() {
+    const { email } = this.state
     return (
       <div className='page-login-box'>
         <Card className='page-login-box-card'>
           <CardContent>
-            <Typography
-              className='page-login-box-card-title'
-              variant='display1'
-              gutterBottom
-            >
+            <Typography className='page-login-box-card-title' variant='display1' gutterBottom>
               Get started with us.
             </Typography>
             <TextField
               id='page-login-box-email'
               label='Your Email ID'
               className='page-login-box-card-text-field'
-              value=''
+              name='email'
+              value={email || ''}
               onChange={this.handleChange}
               margin='normal'
               variant='outlined'
+              fullWidth
             />
           </CardContent>
         </Card>

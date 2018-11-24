@@ -1,4 +1,36 @@
 .page-app-bar-root {
-    background: rgba(0, 0, 0, 0.1) !important;
-    box-shadow: none !important;
+  background: rgba(0, 0, 0, 0.1) !important;
+  box-shadow: none !important;
+  padding: 0 25px;
+  height: 60px;
+  flex-direction: row !important;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.page-app-bar-root .header-logo {
+  height: 40px;
+  width: 40px;
+  background-image: url("./discussion.svg");
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.page-app-bar-root ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.page-app-bar-root ul > li {
+  padding: 22px 10px;
+  display: inline-block;
+  font-size: 14px;
+  border-bottom: 2px solid transparent;
+}
+
+.page-app-bar-root ul > li:hover {
+  border-color: #fff;
+  cursor: pointer;
 }

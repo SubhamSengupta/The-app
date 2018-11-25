@@ -11,5 +11,7 @@
 }
 
 .page-login-box .page-login-box-card-text-field {
-  margin-top: 2px !important;
+  margin-top: 0 !important;
+  height: 40px !important;
+  padding: 10px 0 !important;
 }

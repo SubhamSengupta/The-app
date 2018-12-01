@@ -13,17 +13,20 @@ router.post('/register', (req, res) => {
       if (err) {
         res.status(500).send({ success: false, message: err.name })
       } else {
-        res.status(200).send({ success: true, user })
+        const userObj = {
+          email: user.email,
+        }
+        res.status(200).send({ success: true, user: userObj })
       }
     })
   } else {
-    res.status(500).send({ success: false, message: 'email and password are' })
+    res.status(500).send({ success: false, message: 'email and password are required' })
   }
 })
 
 router.post('/login', (req, res) => {
   const { email, password } = req.body
-  if (!email || email === '') {
+  if (!email) {
     res.send({
       status: 200,
     })
@@ -32,7 +35,10 @@ router.post('/login', (req, res) => {
       if (err) {
         res.status(500).send({ success: false, message: err.name })
       } else if (user && user.password === password) {
-        res.status(200).send({ success: true, user })
+        const userObj = {
+          email: user.email,
+        }
+        res.status(200).send({ success: true, user: userObj })
       } else {
         res.status(400).send({ success: false, message: 'Invalid email or password' })
       }

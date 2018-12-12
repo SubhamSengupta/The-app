@@ -2,8 +2,12 @@
   "name": "app",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server/index.js",
   "dependencies": {
+    "@material-ui/core": "^3.5.1",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.13",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3"
@@ -34,7 +38,13 @@
   },
   "scripts": {
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --open --mode development"
+    "start": "webpack-dev-server --open --mode development & nodemon"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "src/*",
+      "webpack.config.js"
+    ]
   },
   "repository": {
     "type": "git",

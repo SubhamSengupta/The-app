@@ -1,6 +1,6 @@
 import React from 'react'
-import PublicPageWrapper from '../../components/PublicPageWrapper'
-import BigBanner from '../../components/BigBanner'
+import PublicPageWrapper from '../../Components/PublicPageWrapper'
+import BigBanner from '../../Components/BigBanner'
 
 import HomePageBanner from './assets/home_page_banner.jpg'
 
